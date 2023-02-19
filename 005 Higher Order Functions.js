@@ -20,3 +20,8 @@ for (let func of operations) {
   let result = func(30, 5);
   console.log(result);
 }
+
+const thing = {
+  doSomething: add,
+};
+console.log(thing.doSomething(20, 10));
