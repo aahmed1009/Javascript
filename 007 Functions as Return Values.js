@@ -18,7 +18,7 @@ const isBetween = function (x, y) {
     return num >= x && num <= y;
   };
 };
-let isChild = isBetween(0, 20);
+let isChild = isBetween(0, 10);
 console.log(isChild(30));
 
 let isAge = isBetween(0, 20);
