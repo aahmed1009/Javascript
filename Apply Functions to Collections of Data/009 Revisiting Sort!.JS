@@ -1,11 +1,25 @@
-//creates a new array with all elements that pass the test implemented by provided function
-const nums = [34, 35, 67, 54, 109, 102, 32, 9];
+//SORT
+//By default, the sort() function sorts values as strings.
+// SORT() MUTATES THE ORIGINAL ARRAY!
+const prices = [400.5, 3000, 99.99, 35.99, 12.0, 9500];
+//it converts numbers to strings and sort them as strings ...
+//based of strings rather than the actual value
+//[ 12, 3000, 35.99, 400.5, 9500, 99.99 ]
 
-const odds = nums.filter((n) => n % 2 === 1);
-// console.log(odds);
-const evens = nums.filter((n) => n % 2 === 0);
-// console.log(evens);
-
+console.log(prices.sort());
+//customizing sort behavior
+// arr.sort(compareFunc(a,b))
+// If compareFunc(a,b) returns less than 0
+// Sort a before b
+// If compareFunc(a,b) returns 0
+// Leave a and b unchanged with respect to
+// each other
+// If compareFunc(a,b) returns greater than 0
+// Sort b before a
+const ascendingOrder = prices.sort((a, b) => a - b);
+console.log(ascendingOrder);
+const descindingOrder = prices.sort((a, b) => b - a);
+console.log(descindingOrder);
 const books = [
   {
     title: "Good Omens",
@@ -62,13 +76,11 @@ const books = [
     genres: ["fiction"],
   },
 ];
-const highestRating = books.filter((h) => h.rating >= 4);
-// console.log(highestRating);
-
-// Simple search functionality:
-const query = "The";
-const results = books.filter((book) => {
-  const title = book.title.toLowerCase();
-  return title.includes(query.toLowerCase());
-});
-console.log(results);
+// const arrangeFromLowestToHighestRating = books.sort(
+//   (a, b) => a.rating - b.rating
+// );
+// console.log(arrangeFromLowestToHighestRating);
+const arrangeFromHighestToLowestRating = books.sort(
+  (a, b) => b.rating - a.rating
+);
+console.log(arrangeFromHighestToLowestRating);
